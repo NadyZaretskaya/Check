@@ -7,6 +7,8 @@ public class Dog extends Animal implements Playeble{
         super(name, age);
     }
 
+
+    @Override
     public void play() {
         System.out.println("Caught the ball");
     }

@@ -6,6 +6,7 @@ public class CreatingOfAnimal {
     static String name;
     static int age;
     static int type;
+    static List<Animal> animals = new ArrayList();
 
     public static void setNameAgeType() {
         Scanner scanner = new Scanner(System.in);
@@ -18,14 +19,20 @@ public class CreatingOfAnimal {
     }
 
     public static ArrayList getAnimalsList(int type) {
-        List<Animal> animals = new ArrayList();
-        if (type == 2) {
+       if (type == 1) {
             animals.add(new Dog(name, age));
-        } else if (type == 1) {
+        } else if (type == 2) {
             animals.add(new Cat(name, age));}
         else {
             System.out.println("Вы указали неверное животное");
         }
         return (ArrayList) animals;
     }
+
+    public static void playingWithAnimal() {
+        for (int i = 0; i < animals.size(); i++) {
+            animals.get(i).play();
+        }
+    }
+
 }
